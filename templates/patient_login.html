@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Patient Login – HealthPulse</title>
+
+<link rel="stylesheet" href="/static/admin.css">
+
+</head>
+
+<body>
+
+<!-- Back Link -->
+<div class="back">
+<a href="/">← Back to Home</a>
+</div>
+
+<!-- Login Card -->
+<div class="login-container">
+
+<h2 class="logo">⚕ HealthPulse</h2>
+
+<div class="icon">👤</div>
+
+<h1>Patient Login</h1>
+
+<p>Enter your credentials to access the patient dashboard</p>
+
+<form method="POST" action="/patient-login">
+
+<label>Email</label>
+<input type="email" name="email" placeholder="Enter registered email" required>
+
+<label>Password</label>
+<input type="password" name="password" placeholder="Enter password" required>
+
+<button type="submit">Sign In</button>
+
+</form>
+
+<div class="demo">
+
+Don't have account?  
+<a href="/patient-register">Register here</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

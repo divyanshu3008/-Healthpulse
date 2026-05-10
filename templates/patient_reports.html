@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Health Reports</title>
+
+<link rel="stylesheet" href="/static/admin.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>⚕ HealthPulse</h2>
+
+<ul>
+
+<li><a href="/patient-dashboard">My Profile</a></li>
+
+<li><a href="/patient-predictions">Predictions</a></li>
+
+<li><a href="/patient-reports">Health Reports</a></li>
+
+<li><a href="#">Vaccinations</a></li>
+
+<li><a href="/logout">Logout</a></li>
+
+</ul>
+
+</div>
+
+<div class="main">
+
+<h1>Health Reports</h1>
+
+<div class="card">
+
+<h3>{{patient[0]}}</h3>
+<p>Age: {{patient[1]}}</p>
+<p>Blood Group: {{patient[2]}}</p>
+
+</div>
+
+<h2>Blood Pressure Trend</h2>
+<canvas id="bpChart"></canvas>
+
+<h2>Blood Sugar Trend</h2>
+<canvas id="sugarChart"></canvas>
+
+<h2>BMI Trend</h2>
+<canvas id="bmiChart"></canvas>
+
+<a href="/download-report">
+<button>Download PDF Report</button>
+</a>
+
+</div>
+
+<script>
+
+new Chart(document.getElementById("bpChart"),{
+
+type:"line",
+
+data:{
+labels:["Jan","Feb","Mar","Apr"],
+datasets:[{
+label:"Blood Pressure",
+data:{{bp}}
+}]
+}
+
+})
+
+new Chart(document.getElementById("sugarChart"),{
+
+type:"line",
+
+data:{
+labels:["Jan","Feb","Mar","Apr"],
+datasets:[{
+label:"Blood Sugar",
+data:{{sugar}}
+}]
+}
+
+})
+
+new Chart(document.getElementById("bmiChart"),{
+
+type:"line",
+
+data:{
+labels:["Jan","Feb","Mar","Apr"],
+datasets:[{
+label:"BMI",
+data:{{bmi}}
+}]
+}
+
+})
+
+</script>
+
+</body>
+
+</html>

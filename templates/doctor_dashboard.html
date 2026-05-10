@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='doctor.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>HealthPulse</h2>
+        <p class="sub">Doctor Portal</p>
+
+        <ul>
+            <li class="active">Overview</li>
+            <li>Patient List</li>
+            <li>Disease Prediction</li>
+            <li>Patient Reports</li>
+            <li>Public Health</li>
+        </ul>
+
+        <div class="doctor">
+            <p>Dr. Priya Sharma</p>
+            <span>Doctor</span>
+        </div>
+
+        <a href="/logout" class="logout">Logout</a>
+    </div>
+
+    <!-- Main -->
+    <div class="main">
+
+        <h1>Doctor Dashboard</h1>
+        <p>Overview of your patients and health insights</p>
+
+        <!-- Cards -->
+        <div class="cards">
+            <div class="card">
+                <h3>My Patients</h3>
+                <h2>6</h2>
+            </div>
+
+            <div class="card">
+                <h3>Critical Cases</h3>
+                <h2>2</h2>
+            </div>
+
+            <div class="card">
+                <h3>Avg Risk Score</h3>
+                <h2>39%</h2>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <h2>Recent Patients</h2>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Condition</th>
+                <th>Status</th>
+                <th>Heart Risk</th>
+                <th>Last Visit</th>
+            </tr>
+
+            {% for p in patients %}
+            <tr>
+                <td>{{ p.name }}</td>
+                <td>{{ p.age }}</td>
+                <td>{{ p.condition }}</td>
+
+                <td>
+                    <span class="status {{ p.status|lower }}">
+                        {{ p.status }}
+                    </span>
+                </td>
+
+                <td class="risk">{{ p.risk }}</td>
+                <td>{{ p.date }}</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+
+    </div>
+
+</div>
+
+</body>
+</html>

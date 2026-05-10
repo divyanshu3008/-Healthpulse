@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div>
+            <h2>💙 HealthPulse</h2>
+            <p class="role">Admin Portal</p>
+
+           <nav>
+    <a href="/admin-dashboard">Overview</a>
+    <a href="#">User Management</a>
+    <a href="#">Health Statistics</a>
+
+    <!-- ✅ YAHI ADD KARNA HAI -->
+    <a href="/hospital-resources">Hospital Resources</a>
+
+    <a href="#">Outbreak Alerts</a>
+</nav>
+        </div>
+
+        <div class="bottom">
+            <p>👤 Admin User</p>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="content">
+
+        <h1>Admin Dashboard</h1>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total Patients</h3>
+                <div class="number">{{ total_patients }}</div>
+                <p>Registered patients</p>
+            </div>
+
+            <div class="card">
+                <h3>Active Doctors</h3>
+                <div class="number">4</div>
+                <p>Total doctors</p>
+            </div>
+
+            <div class="card">
+                <h3>Critical Cases</h3>
+                <div class="number">2</div>
+                <p>Require attention</p>
+            </div>
+
+            <div class="card">
+                <h3>Bed Occupancy</h3>
+                <div class="number">84%</div>
+                <p>420 / 500 beds</p>
+            </div>
+
+        </div>
+
+        <div class="table-box">
+            <h2>Registered Patients</h2>
+
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Condition</th>
+                    <th>Status</th>
+                </tr>
+
+                {% for p in patients %}
+                <tr>
+                    <td>{{ p.id }}</td>
+                    <td>{{ p.name }}</td>
+                    <td>{{ p.age }}</td>
+                    <td>{{ p.condition }}</td>
+                    <td>
+                        <span class="status {{ p.status|lower }}">
+                            {{ p.status }}
+                        </span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

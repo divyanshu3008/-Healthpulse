@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Vaccination Status</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="logo">
+<h2><i class="fa-solid fa-heart-pulse"></i> HealthPulse</h2>
+<p>Patient Portal</p>
+</div>
+
+<div class="nav-title">Navigation</div>
+
+<ul class="menu">
+
+<li>
+<a href="/patient-dashboard">
+<i class="fa-solid fa-user"></i> My Profile
+</a>
+</li>
+
+<li>
+<a href="/patient-predictions">
+<i class="fa-solid fa-heart"></i> Predictions
+</a>
+</li>
+
+<li>
+<a href="/download-report">
+<i class="fa-solid fa-file-medical"></i> Health Reports
+</a>
+</li>
+
+<li class="active">
+<a href="/vaccinations">
+<i class="fa-solid fa-syringe"></i> Vaccinations
+</a>
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+<h1>Vaccination Status</h1>
+
+<p class="subtitle">
+Track your immunization records
+</p>
+
+
+<!-- COVID -->
+
+<div class="profile-card">
+
+<div style="display:flex;align-items:center;gap:15px">
+
+<i class="fa-solid fa-syringe icon"></i>
+
+<div>
+
+<h3>COVID-19 Vaccine</h3>
+
+<p>Status : {{ vaccines[0] }}</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- HEPATITIS -->
+
+<div class="profile-card">
+
+<div style="display:flex;align-items:center;gap:15px">
+
+<i class="fa-solid fa-syringe icon"></i>
+
+<div>
+
+<h3>Hepatitis B</h3>
+
+<p>Status : {{ vaccines[1] }}</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FLU -->
+
+<div class="profile-card">
+
+<div style="display:flex;align-items:center;gap:15px">
+
+<i class="fa-solid fa-syringe icon"></i>
+
+<div>
+
+<h3>Flu Vaccine</h3>
+
+<p>Status : {{ vaccines[2] }}</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</body>
+
+</html>

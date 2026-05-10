@@ -1,0 +1,161 @@
+/* ===============================
+   Global Styles
+================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f4f7fb;
+  color: #1f2d3d;
+  line-height: 1.6;
+}
+
+/* ===============================
+   Hero Section
+================================ */
+.hero {
+  text-align: center;
+  padding: 80px 20px 60px;
+  background: linear-gradient(135deg, #eaf4ff, #f8fbff);
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #d8ecff;
+  color: #1b76d1;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero h1 span {
+  color: #1b76d1;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 20px auto 0;
+  color: #6b7c93;
+  font-size: 18px;
+}
+
+/* ===============================
+   Feature Cards
+================================ */
+.features {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  width: 260px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+  margin: 15px 0 10px;
+}
+
+.card p {
+  color: #6b7c93;
+  font-size: 14px;
+}
+
+/* ===============================
+   Portal Section
+================================ */
+.portal {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.portal h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.portal p {
+  color: #6b7c93;
+  margin-bottom: 40px;
+}
+
+.portal-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.portal-card {
+  background: white;
+  width: 280px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.portal-card:hover {
+  transform: translateY(-6px);
+}
+
+.portal-card h3 {
+  margin: 15px 0;
+}
+
+.portal-card p {
+  font-size: 14px;
+  color: #6b7c93;
+}
+
+/* ===============================
+   Buttons
+================================ */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 22px;
+  background: #1b76d1;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0f5cad;
+}
+
+/* ===============================
+   Footer
+================================ */
+.footer {
+  text-align: center;
+  padding: 25px;
+  font-size: 14px;
+  color: #6b7c93;
+}

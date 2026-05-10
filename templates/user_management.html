@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Management</title>
+<link rel="stylesheet" href="/static/admin.css">
+</head>
+
+<body>
+<div class="layout">
+
+<!-- Sidebar -->
+<aside class="sidebar">
+    <h2>HealthPulse</h2>
+    <p class="role">Admin Portal</p>
+
+    <nav>
+        <a href="/admin-dashboard">Overview</a>
+        <a class="active" href="/user-management">User Management</a>
+    </nav>
+</aside>
+
+<!-- Main -->
+<main class="content">
+
+<h1>User Management</h1>
+
+<!-- Doctors -->
+<div class="table-box">
+<h2>Registered Doctors</h2>
+
+<table>
+<tr>
+<th>ID</th><th>Name</th><th>Specialty</th><th>Patients</th><th>Status</th>
+</tr>
+
+{% for d in doctors %}
+<tr>
+<td>{{ d.id }}</td>
+<td>{{ d.name }}</td>
+<td>{{ d.spec }}</td>
+<td>{{ d.patients }}</td>
+<td>{{ d.status }}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+
+<!-- Patients -->
+<div class="table-box">
+<h2>Registered Patients</h2>
+
+<table>
+<tr>
+<th>ID</th><th>Name</th><th>Age</th><th>Condition</th><th>Status</th>
+</tr>
+
+{% for p in patients %}
+<tr>
+<td>{{ p.id }}</td>
+<td>{{ p.name }}</td>
+<td>{{ p.age }}</td>
+<td>{{ p.condition }}</td>
+<td>{{ p.status }}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+
+
+<!-- Add Doctor -->
+<div class="form-box">
+<h2>Add Doctor</h2>
+<form>
+<input placeholder="Doctor Name">
+<input placeholder="Specialty">
+<input placeholder="Patients Count">
+<button>Add Doctor</button>
+</form>
+</div>
+
+
+<!-- Add Patient -->
+<div class="form-box">
+<h2>Add Patient</h2>
+<form>
+<input placeholder="Patient Name">
+<input placeholder="Age">
+<input placeholder="Condition">
+<button>Add Patient</button>
+</form>
+</div>
+
+</main>
+</div>
+</body>
+</html>

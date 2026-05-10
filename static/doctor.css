@@ -1,0 +1,391 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Background */
+body {
+  background: linear-gradient(135deg, #eef3f8, #dfe9f3);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Back link */
+.back {
+  width: 100%;
+  max-width: 900px;
+  margin: 20px;
+}
+
+.back a {
+  text-decoration: none;
+  color: #4a6b8a;
+  font-size: 14px;
+}
+
+/* Login Card */
+.login-container {
+  background: white;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Logo */
+.logo {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Icon */
+.icon {
+  font-size: 40px;
+  background: #e6f2ff;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Headings */
+h1 {
+  margin-bottom: 10px;
+}
+
+p {
+  color: #6b7c93;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+/* Form */
+form {
+  text-align: left;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d0d7de;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 14px;
+  background: #1b76d1;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #0f5cad;
+}
+
+/* Demo box */
+.demo {
+  margin-top: 20px;
+  background: #f2f5f9;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f5f7fb;
+}
+
+.container {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #0f1c2e;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 0;
+}
+
+.sub {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.active {
+    background: #1c2f4a;
+    border-radius: 5px;
+}
+
+.doctor {
+    margin-top: 40px;
+}
+
+.logout {
+    display: block;
+    margin-top: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/* ===== GLOBAL RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #eef2f7;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 260px;
+    background: #0f172a;
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.sub {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 30px;
+}
+
+/* NAV */
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #cbd5e1;
+}
+
+.sidebar ul li:hover {
+    background: #1e293b;
+}
+
+.sidebar ul li.active {
+    background: #2563eb;
+    color: white;
+}
+
+/* DOCTOR INFO */
+.doctor-box {
+    margin-top: 40px;
+}
+
+.doctor-name {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.logout {
+    display: block;
+    margin-top: 15px;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.logout:hover {
+    color: white;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main {
+    flex: 1;
+    padding: 45px 50px;
+}
+
+/* HEADER */
+.header h1 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.header p {
+    color: #6b7280;
+    margin-bottom: 40px;
+    font-size: 15px;
+}
+
+/* ===== CARDS ===== */
+.cards {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.card {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.card h4 {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.card h2 {
+    margin-top: 12px;
+    font-size: 30px;
+}
+
+/* ===== TABLE SECTION ===== */
+.table-box {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+}
+
+.table-box h2 {
+    margin-bottom: 20px;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 16px;
+    font-size: 13px;
+    color: #6b7280;
+    background: #f8fafc;
+}
+
+td {
+    padding: 18px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 14px;
+}
+
+/* ROW HOVER */
+tr:hover {
+    background: #f1f5f9;
+}
+
+/* ===== STATUS BADGES ===== */
+.status {
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;
+}
+
+.stable {
+    background: #22c55e;
+}
+
+.recovering {
+    background: #3b82f6;
+}
+
+.critical {
+    background: #ef4444;
+}
+
+/* ===== RISK COLORS ===== */
+.risk-high {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+.risk-medium {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+.risk-low {
+    color: #10b981;
+    font-weight: bold;
+}

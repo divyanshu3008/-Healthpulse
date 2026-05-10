@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Patient Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+
+<body>
+
+<div class="layout">
+
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<h2><i class="fa-solid fa-heart-pulse"></i> HealthPulse</h2>
+
+<p>Patient Portal</p>
+
+</div>
+
+
+<div class="nav-title">Navigation</div>
+
+
+<ul class="menu">
+
+<li class="active">
+
+<a href="/patient-dashboard">
+
+<i class="fa-solid fa-user"></i> My Profile
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="/patient-predictions">
+
+<i class="fa-solid fa-heart"></i> Predictions
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="/download-report">
+
+<i class="fa-solid fa-file-medical"></i> Health Reports
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="/vaccinations">
+<i class="fa-solid fa-syringe"></i> Vaccinations
+</a>
+
+</li>
+
+</ul>
+
+
+
+<div class="sidebar-user">
+
+<div class="user-avatar">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+<div>
+
+<strong>{{ patient[0] }}</strong>
+
+<p>Patient</p>
+
+</div>
+
+<a href="/logout" class="logout">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- MAIN -->
+
+<div class="main">
+
+
+<h1>My Health Profile</h1>
+
+<p class="subtitle">
+
+Your personal health data and vitals
+
+</p>
+
+
+
+<!-- PROFILE CARD -->
+
+<div class="profile-card">
+
+<div class="profile-icon">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+
+<div>
+
+<h2>{{ patient[0] }}</h2>
+
+<p>{{ patient[1] }} years • {{ patient[2] }}</p>
+
+<p>Blood Group : {{ patient[3] }}</p>
+
+<p>Phone : {{ patient[4] }}</p>
+
+</div>
+
+</div>
+
+
+
+<!-- HEALTH VITALS -->
+
+<div class="grid">
+
+
+<div class="card">
+
+<div class="card-top">
+
+<h4>Blood Pressure</h4>
+
+<i class="fa-solid fa-heart icon"></i>
+
+</div>
+
+<h2>{{ patient[5] }}</h2>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-top">
+
+<h4>Glucose</h4>
+
+<i class="fa-solid fa-wave-square icon"></i>
+
+</div>
+
+<h2>{{ patient[6] }} mg/dL</h2>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-top">
+
+<h4>BMI</h4>
+
+<i class="fa-solid fa-user icon"></i>
+
+</div>
+
+<h2>{{ patient[7] }}</h2>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-top">
+
+<h4>Heart Rate</h4>
+
+<i class="fa-solid fa-heart icon"></i>
+
+</div>
+
+<h2>{{ patient[8] }} bpm</h2>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="card-top">
+
+<h4>Temperature</h4>
+
+<i class="fa-solid fa-thermometer-half icon"></i>
+
+</div>
+
+<h2>{{ patient[9] }} °F</h2>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+</body>
+
+</html>

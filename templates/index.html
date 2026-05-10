@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthPulse – Public Health Dashboard</title>
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+
+<body>
+<nav style="display:flex; align-items:center; padding:15px 30px; background:#ffffff;">
+    
+    <!-- Logo -->
+    <img src="{{ url_for('static', filename='heartbeat.png') }}" 
+         style="width:30px; margin-right:10px;">
+
+    <!-- Project Name -->
+    <h2 style="margin:0; font-weight:600; color:#1f2937;">
+        HealthPulse
+    </h2>
+
+</nav>
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero">
+        <div class="hero-badge">⚕ Public Health Intelligence Platform</div>
+
+        <h1>
+            Smarter Health Decisions <br>
+            with <span>Real-Time Data</span>
+        </h1>
+
+        <p>
+            Monitor public health metrics, predict disease risks with AI,
+            and manage patient records — all in one unified dashboard.
+        </p>
+    </section>
+
+
+    <!-- ================= FEATURES ================= -->
+    <section class="features">
+
+        <div class="card">
+            <h3>💙 Disease Prediction</h3>
+            <p>ML-powered risk assessment for heart disease & diabetes</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Health Analytics</h3>
+            <p>Region-wise disease trends and vaccination coverage</p>
+        </div>
+
+        <div class="card">
+            <h3>💉 Vaccination Tracking</h3>
+            <p>Monitor immunization status across populations</p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= PORTAL SECTION ================= -->
+    <section class="portal">
+
+        <h2>Choose Your Portal</h2>
+        <p>Select your role to access the dashboard</p>
+
+        <div class="portal-cards">
+
+            <!-- Admin -->
+            <div class="portal-card">
+                <h3>🛡 Admin Portal</h3>
+                <p>
+                    Manage users, monitor hospital resources, and track
+                    outbreak alerts across regions.
+                </p>
+                <a href="/admin-login" class="btn">Login as Admin →</a>
+
+
+            </div>
+
+            <!-- Doctor -->
+            <div class="portal-card">
+                <h3>🩺 Doctor Portal</h3>
+                <p>
+                    View patient records, run disease predictions, and access
+                    public health insights.
+                </p>
+                <a href="/doctor-login" class="btn">Login as Doctor →</a>
+            </div>
+
+            <!-- Patient -->
+            <div class="portal-card">
+                <h3>👤 Patient Portal</h3>
+                <p>
+                    Check your health profile, prediction results,
+                    vaccination status, and reports.
+                </p>
+                <a href="/patient_signin">
+                 <button class="btn">Sign In</button>
+                  </a>
+
+                   <br><br>
+                <a href="/patient-login" class="btn">Login as Patient →</a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Resources</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='hospital.css') }}">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>💙 HealthPulse</h2>
+        <p>Admin Portal</p>
+
+        <nav>
+            <a href="/admin-dashboard">Overview</a>
+            <a>User Management</a>
+            <a>Health Statistics</a>
+            <a class="active">Hospital Resources</a>
+            <a>Outbreak Alerts</a>
+        </nav>
+
+        <div class="bottom">
+            <p>👤 Admin User</p>
+            <a href="#">Logout</a>
+        </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="content">
+
+        <h1>Hospital Resources</h1>
+
+        <div class="grid">
+
+            <!-- CARD -->
+            <div class="card">
+                <h3>🏥 General Beds</h3>
+                <div class="flex">
+                    <div class="circle" style="--value:84;"></div>
+                    <div>
+                        <h2>84%</h2>
+                        <p>Occupancy Rate</p>
+                        <p>Total: <b>500</b></p>
+                        <p>Occupied: <span class="red">420</span></p>
+                        <p>Available: <span class="green">80</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🏥 ICU Beds</h3>
+                <div class="flex">
+                    <div class="circle" style="--value:84;"></div>
+                    <div>
+                        <h2>84%</h2>
+                        <p>Occupancy Rate</p>
+                        <p>Total: <b>50</b></p>
+                        <p>Occupied: <span class="red">42</span></p>
+                        <p>Available: <span class="green">8</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🏥 Ventilators</h3>
+                <div class="flex">
+                    <div class="circle" style="--value:60;"></div>
+                    <div>
+                        <h2>60%</h2>
+                        <p>Occupancy Rate</p>
+                        <p>Total: <b>30</b></p>
+                        <p>Occupied: <span class="red">18</span></p>
+                        <p>Available: <span class="green">12</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>🏥 Operation Theaters</h3>
+                <div class="flex">
+                    <div class="circle" style="--value:70;"></div>
+                    <div>
+                        <h2>70%</h2>
+                        <p>Occupancy Rate</p>
+                        <p>Total: <b>10</b></p>
+                        <p>Occupied: <span class="red">7</span></p>
+                        <p>Available: <span class="green">3</span></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

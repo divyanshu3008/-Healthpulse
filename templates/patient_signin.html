@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>HealthPulse Patient Sign In</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#e8f0ff,#f5f7fb);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.container{
+background:white;
+width:420px;
+padding:40px;
+border-radius:15px;
+box-shadow:0px 10px 25px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+margin-bottom:10px;
+color:#2c3e50;
+}
+
+.icon{
+width:70px;
+height:70px;
+border-radius:15px;
+background:#e9f0ff;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
+margin-bottom:20px;
+font-size:30px;
+}
+
+h2{
+margin-bottom:10px;
+}
+
+.subtitle{
+color:#555;
+margin-bottom:25px;
+font-size:14px;
+}
+
+input{
+width:100%;
+padding:12px;
+margin-top:10px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:14px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:15px;
+border:none;
+border-radius:8px;
+background:#2f6fed;
+color:white;
+font-size:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#1c54c9;
+}
+
+.timer{
+margin-top:15px;
+font-size:14px;
+color:#555;
+}
+
+.error{
+color:red;
+margin-top:10px;
+font-size:14px;
+}
+.back-home{
+position:absolute;
+top:20px;
+left:30px;
+text-decoration:none;
+color:#2f6fed;
+font-size:15px;
+font-weight:500;
+}
+
+.back-home:hover{
+text-decoration:underline;
+}
+</style>
+
+</head>
+
+<body>
+<a href="/" class="back-home">← Back to Home</a>
+
+<div class="container">
+
+<div class="logo">⚕ HealthPulse</div>
+
+<div class="icon">👤</div>
+
+<h2>Patient Sign In</h2>
+
+<p class="subtitle">Enter your email to receive OTP</p>
+
+{% if not otp_sent %}
+
+<form action="/send-otp" method="POST">
+
+<input type="email" name="email" placeholder="Enter your email" required>
+
+<button type="submit">Send OTP</button>
+
+</form>
+
+{% endif %}
+
+
+{% if otp_sent %}
+
+<form action="/verify-otp" method="POST">
+
+<input type="hidden" name="email" value="{{email}}">
+
+<input type="text" name="otp" placeholder="Enter OTP" required>
+
+{% if error %}
+<p class="error">{{error}}</p>
+{% endif %}
+
+<button type="submit">Verify OTP</button>
+
+</form>
+
+<p id="timer" class="timer">Resend OTP in 30 seconds</p>
+
+<form action="/resend-otp" method="POST">
+
+<input type="hidden" name="email" value="{{email}}">
+
+<button id="resendBtn" type="submit" disabled>Resend OTP</button>
+
+</form>
+
+{% endif %}
+
+</div>
+
+<script>
+
+let timeLeft = 30;
+
+let timer = document.getElementById("timer");
+
+let resendBtn = document.getElementById("resendBtn");
+
+if(timer){
+
+let countdown = setInterval(function(){
+
+timeLeft--;
+
+timer.innerHTML = "Resend OTP in " + timeLeft + " seconds";
+
+if(timeLeft <= 0){
+
+clearInterval(countdown);
+
+timer.innerHTML = "You can resend OTP now";
+
+resendBtn.disabled = false;
+
+}
+
+},1000);
+
+}
+
+</script>
+
+</body>
+</html>
